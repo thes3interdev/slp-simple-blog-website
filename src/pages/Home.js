@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BlogList from '../components/BlogList';
 
 const Home = () => {
@@ -34,6 +34,10 @@ const Home = () => {
 
 		setBlogs(updatedBlogs);
 	};
+
+	useEffect(() => {
+		console.log('useEffect has run...');
+	});
 
 	return (
 		<div className="home">
