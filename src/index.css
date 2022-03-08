@@ -20,11 +20,11 @@
 	}
 
 	.navbar-header {
-		@apply text-sky-800;
+		@apply text-2xl font-semibold uppercase text-sky-800;
 	}
 
 	.navbar-links {
-		@apply ml-auto;
+		@apply ml-auto space-x-2 text-lg font-medium text-sky-800;
 	}
 
 	.navbar-anchor {
