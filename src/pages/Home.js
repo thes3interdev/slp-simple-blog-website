@@ -18,13 +18,13 @@ const Home = () => {
 		{
 			title: 'The Revolution',
 			body: "Look, I ain't in this for your revolution, and I'm not in it for you, Princess.",
-			author: 'Bo Katan',
+			author: 'Din Djarin',
 			id: 3,
 		},
 		{
 			title: 'A New Hope',
 			body: "I want to come with you to Alderaan. There's nothing for me here now.",
-			author: 'Sabine Wren',
+			author: 'Din Djarin',
 			id: 4,
 		},
 	]);
@@ -32,6 +32,8 @@ const Home = () => {
 	return (
 		<div className="home">
 			<BlogList blogs={blogs} title="All Blogs" />
+			<br />
+			<BlogList blogs={blogs.filter((blog) => blog.author === 'Din Djarin')} title="Din Djarin's Blogs" />
 		</div>
 	);
 };
