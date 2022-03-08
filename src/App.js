@@ -1,11 +1,15 @@
+import Navbar from './components/Navbar';
+
+import Home from './pages/Home';
+
 const App = () => {
 	return (
 		<div>
-			<div className="flex h-screen w-full items-center justify-center">
-				<h1 className="text-4xl font-semibold text-indigo-600">
-					Hello, React and Tailwind have been correctly configured.
-				</h1>
+			<Navbar />
+			<div className="content">
+				<Home />
 			</div>
+			`
 		</div>
 	);
 };
