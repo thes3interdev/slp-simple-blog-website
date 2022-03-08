@@ -34,4 +34,16 @@
 	.content {
 		@apply my-10 mx-auto max-w-2xl p-5;
 	}
+
+	.blog-preview {
+		@apply my-5 mx-0 border-b border-slate-800 py-[10px] px-4 shadow-md;
+	}
+
+	.blog-preview-header {
+		@apply mb-2 text-xl text-sky-800;
+	}
+
+	.blog-preview-anchor {
+		@apply no-underline;
+	}
 }
