@@ -37,7 +37,7 @@ const Home = () => {
 
 	useEffect(() => {
 		console.log('useEffect has run...');
-	});
+	}, []);
 
 	return (
 		<div className="home">
