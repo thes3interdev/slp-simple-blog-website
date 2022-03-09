@@ -1,29 +1,8 @@
-import { useState, useEffect } from 'react';
 import BlogList from '../components/BlogList';
-import api from '../api/index';
+import useAxios from '../hooks/useAxios';
 
 const Home = () => {
-	const [blogs, setBlogs] = useState(null);
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState(null);
-
-	useEffect(() => {
-		setTimeout(() => {
-			const fetchBlogs = async () => {
-				try {
-					const response = await api.get('/blogs');
-					setBlogs(response.data);
-					setIsLoading(false);
-					setError(null);
-				} catch (err) {
-					setIsLoading(false);
-					setError(err.message);
-				}
-			};
-
-			fetchBlogs();
-		}, 1500);
-	}, []);
+	const { data: blogs, isLoading, error } = useAxios('/blogs');
 
 	return (
 		<div className="home">
