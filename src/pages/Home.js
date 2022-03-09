@@ -1,8 +1,8 @@
 import BlogList from '../components/BlogList';
-import useAxios from '../hooks/useAxios';
+import useFetch from '../hooks/useFetch';
 
 const Home = () => {
-	const { data: blogs, isLoading, error } = useAxios('/blogs');
+	const { data: blogs, isLoading, error } = useFetch('http://localhost:5000/blogs');
 
 	return (
 		<div className="home">
