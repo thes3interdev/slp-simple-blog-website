@@ -48,7 +48,11 @@
 	}
 
 	.blog-preview-header {
-		@apply mb-2 text-xl text-sky-800;
+		@apply mb-2 text-xl uppercase text-sky-800;
+	}
+
+	.blog-preview-sub-header {
+		@apply mb-2 text-xl text-blue-800;
 	}
 
 	.blog-preview-anchor {
@@ -63,10 +67,18 @@
 		@apply block text-left;
 	}
 	.create-header {
-		@apply mb-[10px] text-xl text-sky-800;
+		@apply mb-2 text-xl text-sky-800;
 	}
 
 	.create-input {
 		@apply my-[10px] mx-0 block w-full border-[1px] border-slate-500 py-[6px] px-[10px];
+	}
+
+	.blog-details {
+		@apply my-5 mx-0;
+	}
+
+	.blog-details-header {
+		@apply mb-2 text-xl text-sky-800;
 	}
 }
