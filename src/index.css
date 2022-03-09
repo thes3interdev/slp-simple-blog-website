@@ -74,11 +74,11 @@
 		@apply my-[10px] mx-0 block w-full border-[1px] border-slate-500 py-[6px] px-[10px];
 	}
 
-	.blog-details {
-		@apply my-5 mx-0;
-	}
-
 	.blog-details-header {
 		@apply mb-2 text-xl text-sky-800;
+	}
+
+	.blog-details-body {
+		@apply my-5 mx-0;
 	}
 }
