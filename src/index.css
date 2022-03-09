@@ -15,6 +15,10 @@
 }
 
 @layer components {
+	.error-text {
+		@apply text-red-600;
+	}
+
 	.button {
 		@apply m-1 rounded-lg bg-blue-800 px-5 py-2 text-white;
 	}

@@ -5,6 +5,7 @@ import api from '../api/index';
 const Home = () => {
 	const [blogs, setBlogs] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -13,7 +14,11 @@ const Home = () => {
 					const response = await api.get('/blogs');
 					setBlogs(response.data);
 					setIsLoading(false);
-				} catch (err) {}
+					setError(null);
+				} catch (err) {
+					setIsLoading(false);
+					setError(err.message);
+				}
 			};
 
 			fetchBlogs();
@@ -22,6 +27,7 @@ const Home = () => {
 
 	return (
 		<div className="home">
+			{error && <div className="error-text">{error}</div>}
 			{isLoading && <div>Loading blogs...</div>}
 			{blogs && <BlogList blogs={blogs} title="All Blogs" />}
 		</div>
