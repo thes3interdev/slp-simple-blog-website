@@ -20,7 +20,7 @@
 	}
 
 	.button {
-		@apply m-1 rounded-lg bg-blue-800 px-5 py-2 text-white;
+		@apply m-1 cursor-pointer rounded-lg bg-blue-800 px-5 py-2 text-white;
 	}
 
 	.navbar {
@@ -53,5 +53,20 @@
 
 	.blog-preview-anchor {
 		@apply no-underline;
+	}
+
+	.create {
+		@apply my-0 mx-auto max-w-md text-center;
+	}
+
+	.create-label {
+		@apply block text-left;
+	}
+	.create-header {
+		@apply mb-[10px] text-xl text-sky-800;
+	}
+
+	.create-input {
+		@apply my-[10px] mx-0 block w-full border-[1px] border-slate-500 py-[6px] px-[10px];
 	}
 }
