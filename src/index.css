@@ -60,7 +60,7 @@
 	}
 
 	.create {
-		@apply my-0 mx-auto max-w-md text-center;
+		@apply my-0 mx-auto max-w-md;
 	}
 
 	.create-label {
@@ -71,7 +71,7 @@
 	}
 
 	.create-input {
-		@apply my-[10px] mx-0 block w-full border-[1px] border-slate-500 py-[6px] px-[10px];
+		@apply my-[10px] mx-0 block w-full rounded border-[1px] border-slate-500 py-[6px] px-[10px];
 	}
 
 	.blog-details-header {
