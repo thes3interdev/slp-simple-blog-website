@@ -4,11 +4,23 @@ const Create = () => {
 	const [title, setTitle] = useState('');
 	const [body, setBody] = useState('');
 	const [author, setAuthor] = useState('Din Djarin');
+	const [isLoading, setIsLoading] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
 		const blog = { title, body, author };
+
+		setIsLoading(true);
+
+		fetch('http://localhost:5000/blogs', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(blog),
+		}).then(() => {
+			console.log('New blog created...');
+			setIsLoading(false);
+		});
 	};
 
 	return (
@@ -20,7 +32,7 @@ const Create = () => {
 				<input className="create-input" type="text" required value={title} onChange={(e) => setTitle(e.target.value)} />
 
 				<label className="create-label">Blog Content</label>
-				<textarea className="create-input" required value={body} onChange={(e) => setBody(e.target.value)} />
+				<textarea className="create-input" required value={body} onChange={(e) => setBody(e.target.value)} rows="8" />
 
 				<label className="create-label">Blog Author</label>
 				<select className="create-input" value={author} onChange={(e) => setAuthor(e.target.value)}>
@@ -28,7 +40,12 @@ const Create = () => {
 					<option value="Boba Fett">Boba Fett</option>
 				</select>
 
-				<button className="button">Create Blog</button>
+				{!isLoading && <button className="button">Create Blog</button>}
+				{isLoading && (
+					<button className="button" disabled>
+						Creating Blog...
+					</button>
+				)}
 			</form>
 		</div>
 	);
