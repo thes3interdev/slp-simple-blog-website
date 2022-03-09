@@ -7,21 +7,29 @@ const useAxios = ({ url }) => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
+		const abortController = new AbortController();
+
 		setTimeout(() => {
 			const fetchData = async () => {
 				try {
-					const response = await api.get(url);
+					const response = await api.get(url, { signal: abortController.signal });
 					setData(response.data);
 					setIsLoading(false);
 					setError(null);
 				} catch (err) {
-					setIsLoading(false);
-					setError(err.message);
+					if (err.name === 'AbortError') {
+						console.log('A fetch abort has occured...');
+					} else {
+						setIsLoading(false);
+						setError(err.message);
+					}
 				}
 			};
 
 			fetchData();
 		}, 1500);
+
+		return () => abortController.abort();
 	}, [url]);
 
 	return { data, isLoading, error };
