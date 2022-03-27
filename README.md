@@ -1,6 +1,6 @@
-# Simple Blog
+# Simple Blog Website
 
-Simple blog application to learn the basics of React.js.
+Simple blog website application to learn the basics of React.js.
 
 ## Available Scripts
 
